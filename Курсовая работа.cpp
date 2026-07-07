@@ -39,7 +39,7 @@ int main()
 {
     setlocale(LC_ALL, "rus");
     stack<stroka> stek;
-    ifstream file("Список.txt");
+    ifstream file("РЎРїРёСЃРѕРє.txt");
     string name;
     if (!file.is_open()) {
         cout << "file error" << endl;
@@ -52,18 +52,18 @@ int main()
         stek.push(punkt);
     }
     int n;
-    cout << "Вывод стека: 1" << endl
-        << "Поиск: 2" << endl
-        << "Добавление данных в стек: 3" << endl
-        << "Удаление данных из стека: 4" << endl
-        << "Сохранение стека в файл: 5" << endl
-        << "Сортировка: 6" << endl
-        << "Если вы хотите закончить : 7" << endl;
+    cout << "Р’С‹РІРѕРґ СЃС‚РµРєР°: 1" << endl
+        << "РџРѕРёСЃРє: 2" << endl
+        << "Р”РѕР±Р°РІР»РµРЅРёРµ РґР°РЅРЅС‹С… РІ СЃС‚РµРє: 3" << endl
+        << "РЈРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… РёР· СЃС‚РµРєР°: 4" << endl
+        << "РЎРѕС…СЂР°РЅРµРЅРёРµ СЃС‚РµРєР° РІ С„Р°Р№Р»: 5" << endl
+        << "РЎРѕСЂС‚РёСЂРѕРІРєР°: 6" << endl
+        << "Р•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ Р·Р°РєРѕРЅС‡РёС‚СЊ: 7" << endl;
     cout << endl;
     do
     {
 
-        cout << "Ведите номер действия:";
+        cout << "Р’РµРґРёС‚Рµ РЅРѕРјРµСЂ РґРµР№СЃС‚РІРёСЏ:";
         cin >> n;
         
         switch (n)
@@ -87,7 +87,7 @@ int main()
 		    f6(stek);
 			break;   
         case 7:
-            cout << "Пока пока";
+            cout << "РџРѕРєР° РїРѕРєР°";
             break;
         }
     } while (n != 7);
@@ -105,9 +105,9 @@ void f1(stack<stroka>& stek)
 }
 void f2(stack<stroka>& stek)
 {
-cout<<"Поиск по фамилии: 1"<<endl;
-cout<<"Поиск по возрасту: 2"<<endl;
-cout << "Ведите номер действия:";
+cout<<"РџРѕРёСЃРє РїРѕ С„Р°РјРёР»РёРё: 1"<<endl;
+cout<<"РџРѕРёСЃРє РїРѕ РІРѕР·СЂР°СЃС‚Сѓ: 2"<<endl;
+cout << "Р’РµРґРёС‚Рµ РЅРѕРјРµСЂ РґРµР№СЃС‚РІРёСЏ: ";
 
 short n;
 cin >> n;
@@ -124,7 +124,7 @@ void p_name(stack<stroka>& stek)
 { 
       stack<stroka> tmp = stek;
       string name;
-      cout<<"Ведите фамилию которую ищите: ";
+      cout<<"Р’РµРґРёС‚Рµ С„Р°РјРёР»РёСЋ РєРѕС‚РѕСЂСѓСЋ РёС‰РёС‚Рµ: ";
       cin>>name;
       int a =0;
 while (!tmp.empty())
@@ -135,13 +135,13 @@ while (!tmp.empty())
 		tmp.pop();
 		   
 	   }
-if(a==0){cout<<"Нет такой фамилии"<<endl;}
+if(a==0){cout<<"РќРµС‚ С‚Р°РєРѕР№ С„Р°РјРёР»РёРё"<<endl;}
 }
 
 void p_age(stack<stroka>& stek)
 {stack<stroka> tmp = stek;
 short age;
-cout<<"Ведите возраст который ищите: ";
+cout<<"Р’РµРґРёС‚Рµ РІРѕР·СЂР°СЃС‚ РєРѕС‚РѕСЂС‹Р№ РёС‰РёС‚Рµ: ";
 cin>>age;
 int a =0;
 while (!tmp.empty())
@@ -152,22 +152,22 @@ while (!tmp.empty())
 		tmp.pop();
 		   
 	   }
-if(a==0){cout<<"Нет людей такого возраста"<<endl;}
+if(a==0){cout<<"РќРµС‚ Р»СЋРґРµР№ С‚Р°РєРѕРіРѕ РІРѕР·СЂР°СЃС‚Р°"<<endl;}
 }
 
 
 void f3(stack<stroka>& stek)
 {
-    cout << "Введите имя и возраст через пробел: ";
+    cout << "Р’РµРґРёС‚Рµ РёРјСЏ Рё РІРѕР·СЂР°СЃС‚ С‡РµСЂРµР· РїСЂРѕР±РµР»: ";
     stroka s;
-    cin >> s;         // используется твой operator>>
+    cin >> s;        
     stek.push(s);
 }
 
 void f4(stack<stroka>& stek)
-{cout<<"Удалить по фамилии: 1"<<endl;
-cout<<"Удалить возраст: 2"<<endl;
-cout << "Ведите номер действия:";
+{cout<<"РЈРґР°Р»РёС‚СЊ РїРѕ С„Р°РјРёР»РёРё: 1"<<endl;
+cout<<"РЈРґР°Р»РёС‚СЊ РІРѕР·СЂР°СЃС‚: 2"<<endl;
+cout << "Р’РµРґРёС‚Рµ РЅРѕРјРµСЂ РґРµР№СЃС‚РІРёСЏ:";
 
 short n;
 cin >> n;
@@ -185,7 +185,7 @@ stack<stroka> y_name(stack<stroka>& stek)
 { 
       stack<stroka> tmp = stek;
       string name;
-      cout<<"Ведите фамилию которую удаляем: ";
+      cout<<"Р’РµРґРёС‚Рµ С„Р°РјРёР»РёСЋ РєРѕС‚РѕСЂСѓСЋ СѓРґР°Р»СЏРµРј: ";
       cin>>name;
       int a =0;
       
@@ -199,7 +199,7 @@ stack<stroka> y_name(stack<stroka>& stek)
 		tmp.pop();
 		 a=a+1;}           
 	   }
-if(a==0){cout<<"Нет такой фамилии"<<endl;}
+if(a==0){cout<<"РќРµС‚ С‚Р°РєРѕР№ С„Р°РјРёР»РёРё"<<endl;}
 stek=t;
 return stek;
 
@@ -209,7 +209,7 @@ stack<stroka> y_age(stack<stroka>& stek)
 { 
       stack<stroka> tmp = stek;
       short age;
-      cout<<"Ведите возраст который удаляем: ";
+      cout<<"Р’РµРґРёС‚Рµ РІРѕР·СЂР°СЃС‚ РєРѕС‚РѕСЂС‹Р№ СѓРґР°Р»СЏРµРј: ";
       cin>>age;
       int a =0;
       
@@ -223,14 +223,14 @@ stack<stroka> y_age(stack<stroka>& stek)
 		tmp.pop();
 		 a=a+1;}           
 	   }
-if(a==0){cout<<"Нет людей такого возраста"<<endl;}
+if(a==0){cout<<"РќРµС‚ Р»СЋРґРµР№ С‚Р°РєРѕРіРѕ РІРѕР·СЂР°СЃС‚Р°"<<endl;}
 stek=t;
 return stek;
 }
 
 void f5(stack<stroka>& stek)
 {stack<stroka> tmp = stek;
-ofstream file("Список.txt");
+ofstream file("РЎРїРёСЃРѕРє.txt");
 while (!tmp.empty())
        {
        file<<tmp.top()<<endl;
@@ -249,9 +249,9 @@ void f6(stack<stroka>& stek) {
     for (int i = 0; i < n; ++i)
         ptrs[i] = &v[i];
 
-    cout << "Сортировка по алфавиту: 1\n";
-    cout << "Сортировка по возрасту: 2\n";
-    cout << "Введите номер действия: ";
+    cout << "РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ Р°Р»С„Р°РІРёС‚Сѓ: 1\n";
+    cout << "РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ РІРѕР·СЂР°СЃС‚Сѓ: 2\n"; 
+    cout << "Р’РµРґРёС‚Рµ РЅРѕРјРµСЂ РґРµР№СЃС‚РІРёСЏ: ";
 
     int variant;
     cin >> variant;
@@ -264,12 +264,12 @@ void f6(stack<stroka>& stek) {
             sort(ptrs.begin(), ptrs.end(), comparePersonPtr_age);
             break;
         default:
-            cout << "Неверный вариант\n";
-            return;      // выходим, не меняя стек
+            cout << "РќРµРІРµСЂРЅС‹Р№ РІР°СЂРёР°РЅС‚\n";
+            return;     
     }
 
     stack<stroka> sorted;
-    // кладём так, чтобы сверху был «первый» по сортировке (минимальный)
+
     for (int i = n - 1; i >= 0; --i)
         sorted.push(*ptrs[i]);
 
@@ -277,11 +277,11 @@ void f6(stack<stroka>& stek) {
 }
 bool comparePersonPtr_name(const stroka* a, const stroka* b) {
     if (a->name == b->name)
-        return a->age < b->age;    // если фамилии равны – сортируем по возрасту
-    return a->name < b->name;      // иначе по фамилии по алфавиту
+        return a->age < b->age;   
+    return a->name < b->name;     
 }
 bool comparePersonPtr_age(const stroka* a, const stroka* b) {
     if (a->age == b->age)
-        return a->name < b->name;    // если фамилии равны – сортируем по возрасту
-    return a->age < b->age;      // иначе по фамилии по алфавиту
+        return a->name < b->name;    
+    return a->age < b->age;   
 }
